@@ -1,0 +1,6 @@
+name: TradeShop_CoreProtect_Addon
+version: 1.0.0
+main: com.github.shin19.TradeShopAddon
+author: shin19
+description: TradeShop Record CoreProtect Addon
+softdepend: [TradeShop, CoreProtect]
