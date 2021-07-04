@@ -9,21 +9,25 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.shanerx.tradeshop.framework.events.PlayerTradeEvent;
 
 public class TradeShopAddon extends JavaPlugin implements Listener {
+    private CoreProtectAPI coreProtect = null;
+
     @Override
     public void onEnable() {
+        coreProtect = getCoreProtect();
         this.getServer().getPluginManager().registerEvents(this, this);
     }
 
     @Override
     public void onDisable() {
     }
+
     @EventHandler
     public void onPlayerTrade(PlayerTradeEvent event) {
-        CoreProtectAPI coreProtect = getCoreProtect();
         if (coreProtect != null) {
             coreProtect.logContainerTransaction(event.getPlayer().getDisplayName(), event.getShop().getInventoryLocationAsSL().getLocation());
         }
     }
+
     private CoreProtectAPI getCoreProtect() {
         Plugin plugin = getServer().getPluginManager().getPlugin("CoreProtect");
 
