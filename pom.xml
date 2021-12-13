@@ -6,7 +6,12 @@
 
     <groupId>com.github.shin19</groupId>
     <artifactId>TradeShop_CoreProtect_Addon</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
+
+    <properties>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+    </properties>
     <build>
         <resources>
             <resource>
@@ -45,14 +50,14 @@
         <dependency>
             <groupId>com.github.Tradeshop</groupId>
             <artifactId>TradeShop</artifactId>
-            <version>7026bd4844</version>
+            <version>2.4.0-DEV-2021-11-24T01.44.00</version>
         </dependency>
 
         <!-- CoreProtect -->
         <dependency>
             <groupId>net.coreprotect</groupId>
             <artifactId>coreprotect</artifactId>
-            <version>19.5</version>
+            <version>20.1</version>
         </dependency>
     </dependencies>
 </project>
