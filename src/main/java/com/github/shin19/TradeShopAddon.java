@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.shanerx.tradeshop.framework.events.PlayerSuccessfulTradeEvent;
+import org.shanerx.tradeshop.framework.events.PlayerPrepareTradeEvent;
 
 public class TradeShopAddon extends JavaPlugin implements Listener {
     private CoreProtectAPI coreProtect = null;
@@ -22,7 +22,7 @@ public class TradeShopAddon extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onPlayerTrade(PlayerSuccessfulTradeEvent event) {
+    public void onPlayerTrade(PlayerPrepareTradeEvent event) {
         if (coreProtect != null) {
             coreProtect.logContainerTransaction(event.getPlayer().getDisplayName(), event.getShop().getInventoryLocationAsSL().getLocation());
         }
